@@ -5,6 +5,7 @@ import {Center} from '../Components/Center';
 import {Text, FlatList, TouchableOpacity, Button} from 'react-native';
 import {AuthContext} from '../Components/AuthProvider';
 import faker from 'faker';
+import {AddProductRoute} from '../Routes/AddProductRoute';
 
 const Stack = createStackNavigator<HomeParamList>();
 
@@ -74,8 +75,9 @@ function EditProduct({route, navigation}: HomeStackNavProps<'EditProduct'>) {
 export const HomeStack: React.FC<HomeParamList> = ({}) => {
   const {logout} = useContext(AuthContext);
   return (
-    <Stack.Navigator>
-      <Stack.Screen
+    <Stack.Navigator initialRouteName="Feed">
+      {AddProductRoute(Stack)}
+      {/* <Stack.Screen
         options={({route}) => ({
           headerTitle: `Edit: ${route.params.name}`,
           headerRight: () => (
@@ -98,7 +100,7 @@ export const HomeStack: React.FC<HomeParamList> = ({}) => {
         options={({route}) => ({headerTitle: `Product: ${route.params.name}`})}
         name="Product"
         component={Product}
-      />
+      /> */}
       <Stack.Screen
         name="Feed"
         component={Feed}

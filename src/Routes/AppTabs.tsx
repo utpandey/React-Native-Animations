@@ -3,9 +3,9 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 // import EvilIcons from 'react-native-vector-icons/EvilIcons';
-import {AppParamList} from './Params/AppParamList';
-import {SearchStack} from './Stacks/SearchStack';
-import {HomeStack} from './Stacks/HomeStack';
+import {AppParamList} from '../Params/AppParamList';
+import {SearchStack} from '../Stacks/SearchStack';
+import {HomeStack} from '../Stacks/HomeStack';
 
 const Tabs = createBottomTabNavigator();
 
